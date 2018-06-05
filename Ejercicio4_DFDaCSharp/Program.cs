@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Win32;
+using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace Ejercicio4_DFDaCSharp
 {
@@ -60,12 +66,14 @@ namespace Ejercicio4_DFDaCSharp
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine(" _________________________________________________________________________ ");
                         Console.WriteLine("|                                                                         |");
-                        Console.WriteLine("|----------------SELECCIÓN INVÁLIDA. INTENTE NUEVAMENTE-------------------|");
+                        Console.WriteLine("|---------DATO INVÁLIDO. PRESIONE CUALQUIER TECLA PARA CONTINUAR----------|");
                         Console.WriteLine("|_________________________________________________________________________|");
                         Console.WriteLine("                                                                           ");
+                        
                         Console.BackgroundColor = ConsoleColor.Gray;
                         Console.ForegroundColor = ConsoleColor.Black;
                         Console.WriteLine("                                                                           ");
+                        Console.ReadKey();
                     }
                     else
                     {
@@ -85,13 +93,37 @@ namespace Ejercicio4_DFDaCSharp
 
         public static void CapturaDatos(int tipoConversion)
         {
-            Console.WriteLine("--------------------DATO VÁLIDO----------------------- \n");
+            string n = "";
+            bool esNumero = false;
+            int numero = 0;
+            while (esNumero == false)
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("|---------------Introduzca el número que desea convertir:                 |");
+                n = Console.ReadLine();
+                esNumero = int.TryParse(n, out numero);
+            }
+            Console.WriteLine(numero.ToString());
+           
+            Conversiones(numero, tipoConversion);
             Console.ReadKey();
         }
 
-        public static void Conversiones()
+        public static void Conversiones(int num, int tipoC)
         {
+            if (tipoC == 1)
+            {
 
+            }
+            else if (tipoC == 2)
+            {
+
+            }
+            else if (tipoC == 3)
+            {
+
+            }
         }
 
         public static void MostrarResultado()
