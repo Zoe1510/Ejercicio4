@@ -23,6 +23,7 @@ namespace Ejercicio4_DFDaCSharp
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
+            
             Menu();
         }
 
@@ -104,31 +105,83 @@ namespace Ejercicio4_DFDaCSharp
                 n = Console.ReadLine();
                 esNumero = int.TryParse(n, out numero);
             }
-            Console.WriteLine(numero.ToString());
+            if (numero > 0)
+            {
+                Conversiones(numero, tipoConversion);
+            }
+            else
+            {
+                if (numero == 0)
+                {
+                    Console.WriteLine("0");
+                }
+                else
+                {
+                    Console.WriteLine("Ingrese solo numeros positivos");
+                }
+            }
+            //Console.WriteLine(numero.ToString()); //de prueba          
            
-            Conversiones(numero, tipoConversion);
-            Console.ReadKey();
+           
         }
 
         public static void Conversiones(int num, int tipoC)
         {
-            if (tipoC == 1)
+            String resultado = String.Empty;
+            if (tipoC == 1) //TIPO BINARIO
             {
-
+                
+                while (num > 0)
+                {
+                    if (num % 2 == 0)
+                    {
+                        resultado = "0" + resultado;
+                    }
+                    else
+                    {
+                        resultado = "1" + resultado;
+                    }
+                    num = (int)(num / 2);
+                }
+                
             }
-            else if (tipoC == 2)
+            else if (tipoC == 2) //TIPO OCTAL
             {
-
+                
+                while (num > 0)
+                {
+                    int resto = num % 8;
+                    num = num / 8;
+                    resultado = resto.ToString() + resultado;
+                }
+                
             }
-            else if (tipoC == 3)
+            else if (tipoC == 3) //TIPO HEXADECIMAL
             {
-
+                switch (num)
+                {
+                   case 10: resultado= "A"; break;
+                   case 11: resultado = "B"; break;
+                   case 12: resultado = "C"; break;
+                   case 13: resultado = "D"; break;
+                   case 14: resultado = "E"; break;
+                   case 15: resultado = "F"; break;
+                }
+                while (num > 0)
+                {
+                    int resto = num % 16;
+                    num = num / 16;
+                    resultado = resto.ToString() + resultado;
+                }
             }
+
+            MostrarResultado(resultado); //para mostrar el resultado
         }
 
-        public static void MostrarResultado()
+        public static void MostrarResultado(string result)
         {
-
+            Console.WriteLine(result);
+            Console.ReadKey();
         }
 
        
