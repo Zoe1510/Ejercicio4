@@ -8,69 +8,69 @@ namespace Ejercicio4_DFDaCSharp
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-           // Menu();
-           //int op= Menu();
-            string l = (" _________________________________________________________________________ ".PadLeft(50));
-            Console.Write(l);
-            Console.ReadKey();
-            //CapturaDatos(op);
+            Console.Title="CALCULADORA DE CONVERSIONES";
+            Console.SetWindowSize(75, 18);
+
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
+            Menu();
         }
 
         public static int Menu()
         {
             int opcion = 0;
             string n;
-            bool esNumero=false;
+            bool esNumero = false;
             try
             {
 
-                
-                //do
-                //{
-                //    Console.WriteLine("--------------------Seleccione una de las opciones----------------------- \n");
-                //    Console.WriteLine("---------------PRESIONE 1 PARA: DECIMAL a BINARIO------------------------ \n");
-                //    Console.WriteLine("---------------PRESIONE 2 PARA: DECIMAL a OCTAL-------------------------- \n");
-                //    Console.WriteLine("---------------PRESIONE 3 PARA: DECIMAL a HEXADECIMAL-------------------- \n");
-                //    n = Console.ReadLine();
-                //    /* Si es número correcto retornará true y saldrá
-                //       *  del Ciclo*/
-                //    esNumero = int.TryParse(n, out opcion);
-                //    Console.ReadKey();
-                //}
-                //while (!esNumero);
-                while (!esNumero)
+                while (opcion < 1 | opcion > 3)
                 {
-                    string l=(" _________________________________________________________________________ ".PadLeft(10));
-                    //Console.WriteLine("\n");
-                    //Console.BackgroundColor = ConsoleColor.Blue;
-                    //Console.ForegroundColor = ConsoleColor.White;                    
-                    Console.WriteLine(l);
+                    //Console.WriteLine("                                                                           ");
+                    Console.BackgroundColor = ConsoleColor.DarkBlue;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine(" _________________________________________________________________________ ");
                     Console.WriteLine("|                                                                         |");
-                    Console.WriteLine("|-----------------SELECCIONE UNA DE LAS OPCIONES--------------------------|");
+                    Console.WriteLine("|--------------------SELECCIONE UNA DE LAS OPCIONES-----------------------|");
+                    Console.WriteLine("|_________________________________________________________________________|");
                     Console.WriteLine("|_________________________________________________________________________|");
                     Console.WriteLine("|                                                                         |");
                     Console.WriteLine("|                                                                         |");
-                    Console.WriteLine("|---------------PRESIONE 1 PARA: DECIMAL a BINARIO------------------------|");
+                    Console.WriteLine("|-------------------PRESIONE 1 PARA: DECIMAL a BINARIO--------------------|");
                     Console.WriteLine("|                                                                         |");
-                    Console.WriteLine("|---------------PRESIONE 2 PARA: DECIMAL a OCTAL--------------------------|");
+                    Console.WriteLine("|-------------------PRESIONE 2 PARA: DECIMAL a OCTAL----------------------|");
                     Console.WriteLine("|                                                                         |");
-                    Console.WriteLine("|---------------PRESIONE 3 PARA: DECIMAL a HEXADECIMAL--------------------|");
+                    Console.WriteLine("|-------------------PRESIONE 3 PARA: DECIMAL a HEXADECIMAL----------------|");
                     Console.WriteLine("|                                                                         |");
                     Console.WriteLine("|_________________________________________________________________________|");
+                    Console.WriteLine("                                                                           ");
+                    Console.ResetColor();
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.Black;
                     n = Console.ReadLine();
                     esNumero = int.TryParse(n, out opcion);
+
                     if (opcion < 1 | opcion > 3)
                     {
-                    Console.WriteLine("-----SELECCIÓN INVÁLIDA. INTENTE NUEVAMENTE---- \n");
-                    }else
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine(" _________________________________________________________________________ ");
+                        Console.WriteLine("|                                                                         |");
+                        Console.WriteLine("|----------------SELECCIÓN INVÁLIDA. INTENTE NUEVAMENTE-------------------|");
+                        Console.WriteLine("|_________________________________________________________________________|");
+                        Console.WriteLine("                                                                           ");
+                        Console.BackgroundColor = ConsoleColor.Gray;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("                                                                           ");
+                    }
+                    else
                     {
                         CapturaDatos(opcion);
                     }
-                    //opcion = int.Parse(Console.ReadLine());
-
-                    Console.ReadKey();
 
                 }
                 return opcion;
@@ -80,7 +80,7 @@ namespace Ejercicio4_DFDaCSharp
                 Console.WriteLine("ALGO FALLÓ.", error);
                 return opcion;
             }
-            
+
         }
 
         public static void CapturaDatos(int tipoConversion)
@@ -98,5 +98,41 @@ namespace Ejercicio4_DFDaCSharp
         {
 
         }
+
+        //public static void Main()
+        //{
+        //    int origWidth, width;
+        //    int origHeight, height;
+        //    string m1 = "The current window width is {0}, and the " +
+        //                "current window height is {1}.";
+        //    string m2 = "The new window width is {0}, and the new " +
+        //                "window height is {1}.";
+        //    string m4 = "  (Press any key to continue...)";
+        //    //
+        //    // Step 1: Get the current window dimensions.
+        //    //
+        //    origWidth = Console.WindowWidth;
+        //    origHeight = Console.WindowHeight;
+        //    Console.WriteLine(m1, Console.WindowWidth,
+        //                          Console.WindowHeight);
+        //    Console.WriteLine(m4);
+        //    Console.ReadKey(true);
+        //    //
+        //    // Step 2: Cut the window to 1/4 its original size.
+        //    //
+        //    width = origWidth / 2;
+        //    height = origHeight / 2;
+        //    Console.SetWindowSize(width, height);
+        //    Console.WriteLine(m2, Console.WindowWidth,
+        //                          Console.WindowHeight);
+        //    Console.WriteLine(m4);
+        //    Console.ReadKey(true);
+        //    //
+        //    // Step 3: Restore the window to its original size.
+        //    //
+        //    Console.SetWindowSize(origWidth, origHeight);
+        //    Console.WriteLine(m1, Console.WindowWidth,
+        //                          Console.WindowHeight);
+        //}
     }
 }

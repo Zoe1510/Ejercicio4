@@ -4,3 +4,9 @@ c:\users\zbermudez\documents\visual studio 2015\Projects\Ejercicio4_DFDaCSharp\E
 c:\users\zbermudez\documents\visual studio 2015\Projects\Ejercicio4_DFDaCSharp\Ejercicio4_DFDaCSharp\bin\Debug\Ejercicio4_DFDaCSharp.pdb
 c:\users\zbermudez\documents\visual studio 2015\Projects\Ejercicio4_DFDaCSharp\Ejercicio4_DFDaCSharp\obj\Debug\Ejercicio4_DFDaCSharp.exe
 c:\users\zbermudez\documents\visual studio 2015\Projects\Ejercicio4_DFDaCSharp\Ejercicio4_DFDaCSharp\obj\Debug\Ejercicio4_DFDaCSharp.pdb
+C:\Users\zbermudez\Documents\GitLab\Ejercicios_CSharp\Ejercicio4_DFDaCSharp\Ejercicio4_DFDaCSharp\bin\Debug\Ejercicio4_DFDaCSharp.exe.config
+C:\Users\zbermudez\Documents\GitLab\Ejercicios_CSharp\Ejercicio4_DFDaCSharp\Ejercicio4_DFDaCSharp\obj\Debug\Ejercicio4_DFDaCSharp.exe
+C:\Users\zbermudez\Documents\GitLab\Ejercicios_CSharp\Ejercicio4_DFDaCSharp\Ejercicio4_DFDaCSharp\obj\Debug\Ejercicio4_DFDaCSharp.pdb
+C:\Users\zbermudez\Documents\GitLab\Ejercicios_CSharp\Ejercicio4_DFDaCSharp\Ejercicio4_DFDaCSharp\bin\Debug\Ejercicio4_DFDaCSharp.exe
+C:\Users\zbermudez\Documents\GitLab\Ejercicios_CSharp\Ejercicio4_DFDaCSharp\Ejercicio4_DFDaCSharp\bin\Debug\Ejercicio4_DFDaCSharp.pdb
+C:\Users\zbermudez\Documents\GitLab\Ejercicios_CSharp\Ejercicio4_DFDaCSharp\Ejercicio4_DFDaCSharp\obj\Debug\Ejercicio4_DFDaCSharp.csprojResolveAssemblyReference.cache
