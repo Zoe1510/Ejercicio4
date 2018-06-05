@@ -180,8 +180,38 @@ namespace Ejercicio4_DFDaCSharp
 
         public static void MostrarResultado(string result)
         {
-            Console.WriteLine(result);
-            Console.ReadKey();
+            string respuesta = "";
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.White;
+            //aqui falta darle formato a la respuesta.
+            Console.WriteLine(" _________________________________________________________________________ ");
+            Console.WriteLine(result);//imprime el resultado
+            while(respuesta != "s" && respuesta!="S" && respuesta!="N" && respuesta!= "n")
+            {
+                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine(" _________________________________________________________________________ ");
+                Console.WriteLine("|                                                                         |");
+                Console.WriteLine("|-------------¿DESEA VOLVER A UTILIZAR LA CALCULADORA? (S/N)--------------|");
+                Console.WriteLine("|_________________________________________________________________________|");
+                Console.WriteLine("                                                                           ");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+                respuesta = Console.ReadLine();
+            }
+           
+            
+            if(respuesta=="s" | respuesta == "S")
+            {
+                Menu();
+            }else if(respuesta=="N" | respuesta == "n")
+            {
+                Console.ReadKey();
+            }else
+            {
+                
+            }
+
         }
 
        
