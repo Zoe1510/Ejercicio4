@@ -29,6 +29,10 @@ namespace Ejercicio4_DFDaCSharp
 
         public static int Menu()
         {
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
+            
             int opcion = 0;
             string n;
             bool esNumero = false;
@@ -73,8 +77,9 @@ namespace Ejercicio4_DFDaCSharp
                         
                         Console.BackgroundColor = ConsoleColor.Gray;
                         Console.ForegroundColor = ConsoleColor.Black;
-                        Console.WriteLine("                                                                           ");
+                        Console.WriteLine("                                                                           ");                        
                         Console.ReadKey();
+                        Console.Clear();
                     }
                     else
                     {
@@ -101,8 +106,13 @@ namespace Ejercicio4_DFDaCSharp
             {
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
+                Console.Clear();
+                Console.WriteLine(" _________________________________________________________________________ ");
                 Console.WriteLine("|---------------Introduzca el número que desea convertir:                 |");
+                Console.Write("|---------------Número: ");
                 n = Console.ReadLine();
+               
+                Console.WriteLine("                                                                           ");
                 esNumero = int.TryParse(n, out numero);
             }
             if (numero > 0)
@@ -117,7 +127,17 @@ namespace Ejercicio4_DFDaCSharp
                 }
                 else
                 {
-                    Console.WriteLine("Ingrese solo numeros positivos");
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine(" _________________________________________________________________________ ");
+                    Console.WriteLine("|                                                                         |");
+                    Console.WriteLine("|----NO PUEDE INGRESAR VALORES MENORES A CERO. PRESIONE PARA CONTINUAR----|");
+                    Console.WriteLine("|_________________________________________________________________________|");
+                    Console.WriteLine("                                                                           ");
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.ReadKey();
+                    Menu();
                 }
             }
             //Console.WriteLine(numero.ToString()); //de prueba          
@@ -128,6 +148,7 @@ namespace Ejercicio4_DFDaCSharp
         public static void Conversiones(int num, int tipoC)
         {
             String resultado = String.Empty;
+            int numConvertir = num;
             if (tipoC == 1) //TIPO BINARIO
             {
                 
@@ -175,18 +196,30 @@ namespace Ejercicio4_DFDaCSharp
                 }
             }
 
-            MostrarResultado(resultado); //para mostrar el resultado
+            MostrarResultado(resultado,numConvertir); //para mostrar el resultado
         }
 
-        public static void MostrarResultado(string result)
+        public static void MostrarResultado(string result, int NUM)
         {
             string respuesta = "";
+            Console.Clear();
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             Console.ForegroundColor = ConsoleColor.White;
+           
             //aqui falta darle formato a la respuesta.
             Console.WriteLine(" _________________________________________________________________________ ");
-            Console.WriteLine(result);//imprime el resultado
-            while(respuesta != "s" && respuesta!="S" && respuesta!="N" && respuesta!= "n")
+            Console.WriteLine("|                                                                         |");
+            Console.WriteLine("|-------------NÚMERO A CONVERTIR: "+NUM+"--------------------------------------|");
+            Console.WriteLine("|_________________________________________________________________________|");
+            Console.WriteLine("|                                                                         |");
+            Console.WriteLine("| RESPUESTA: "+result+"                                                               ");
+            Console.WriteLine("|_________________________________________________________________________|");
+            Console.WriteLine("                                                                           ");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+
+            //Console.WriteLine(result);//imprime el resultado
+            while (respuesta != "s" && respuesta!="S" && respuesta!="N" && respuesta!= "n")
             {
                 Console.BackgroundColor = ConsoleColor.DarkBlue;
                 Console.ForegroundColor = ConsoleColor.White;
@@ -195,8 +228,9 @@ namespace Ejercicio4_DFDaCSharp
                 Console.WriteLine("|-------------¿DESEA VOLVER A UTILIZAR LA CALCULADORA? (S/N)--------------|");
                 Console.WriteLine("|_________________________________________________________________________|");
                 Console.WriteLine("                                                                           ");
-                Console.BackgroundColor = ConsoleColor.Black;
-                Console.ForegroundColor = ConsoleColor.White;
+                //Console.BackgroundColor = ConsoleColor.Black;
+                //Console.ForegroundColor = ConsoleColor.White;
+                Console.ResetColor();
                 respuesta = Console.ReadLine();
             }
            
