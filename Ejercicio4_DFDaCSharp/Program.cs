@@ -109,7 +109,7 @@ namespace Ejercicio4_DFDaCSharp
                 Console.Clear();
                 Console.WriteLine(" _________________________________________________________________________ ");
                 Console.WriteLine("|---------------Introduzca el número que desea convertir:                 |");
-                Console.Write("|---------------Número: ");
+                Console.Write(" ---------------Número: ");
                 n = Console.ReadLine();
                
                 Console.WriteLine("                                                                           ");
@@ -212,6 +212,7 @@ namespace Ejercicio4_DFDaCSharp
             Console.WriteLine("|-------------NÚMERO A CONVERTIR: "+NUM+"--------------------------------------|");
             Console.WriteLine("|_________________________________________________________________________|");
             Console.WriteLine("|                                                                         |");
+
             Console.WriteLine("| RESPUESTA: "+result+"                                                               ");
             Console.WriteLine("|_________________________________________________________________________|");
             Console.WriteLine("                                                                           ");
